@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TCP、IP的学习</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="tcp-ip-">TCP/IP的学习</h1>
+<h2 id="-"><strong>三次握手</strong></h2>
+<h3 id="tcp-">TCP提供面向有连接的通信传输。面向有连接是指在数据通信开始之前两端就做好准备工作。</h3>
+<h3 id="-tcp-3-socket-connect-">三次握手指建立一个TCP连接需要客户端和服务端共发送3个包确定连接建立。在socket编程中，这个过程由客户端执行connect触发。</h3>
+<h2 id="-">三次握手流程</h2>
+<h3 id="-syn-1-seq-j-syn_sent-">第一次握手，客户端标志位SYN为1，随机产生一个值seq=J，并将该数据包发给服务端，客户端进入SYN_SENT状态，等待服务器确认。</h3>
+<h3 id="-syn-1-syn-ack-1-ack-j-1-seq-k-syn_rcvd-">第二次握手，服务器端收到数据包后由标志位SYN=1知道客户端请求建立连接；服务器端将标志位SYN和ACK都置为1，ack=J+1，随机产生一个值seq=K，并将该数据包发给客户端以确认连接要求，服务器端进入SYN_RCVD状态。</h3>
+<h3 id="-ack-j-1-ack-1-ack-1-ack-k-1-ack-k-1-ack-1-established-">第三次握手，客户端收到确认后，检查ack是否为J+1，ACK是否为1，如果正确将标志位ACK置为1，ack=K+1并将数据包传给服务端，服务器检查ack是否为K+1，ACK是否为1，如果正确建立连接成功，客户端和服务器都进入ESTABLISHED状态。完成三次握手，随后客户端与服务器端之间可以开始传输数据。</h3>
+<h2 id="-"><strong>四次挥手</strong></h2>
+<h3 id="-tcp-4-socket-close-">四次挥手即终止TCP连接，指断开一个连接，客户端和服务端共发4个包以确认连接断开。在socket编程中，这个过程由服务端或客户端任一方执行close触发。</h3>
+<h3 id="-tcp-fin-fin-tcp-fin-">由于TCP连接是全双工的，因此每个方向都要单独进行关闭，这个原则是当任一方完成数据发送任务后发送一个FIN终止这个方向的连接，收到一个FIN代表着这一个方向没有数据流动，即不会再收到数据，但是在这个TCP连接上仍然能发送数据直到这个方向上也发生了FIN，首先进行关闭的一方执行主动关闭，另一方执行被动关闭。</h3>
+<h2 id="-">四次挥手流程</h2>
+<h3 id="-">中断连接端可以是服务器端也可以是客户端。</h3>
+<h3 id="-fin-m-fin_wait_1-">第一次挥手：客户端发送一个FIN=M，用来关闭客户端到服务器端数据的传送，客户端进入FIN_WAIT_1的状态。意思是说“客户端没有数据发给你了”，但如果服务器端还有数据没有发送完成，不用急着关闭连接，可以继续发送数据。</h3>
+<h3 id="-fin-ack-m-1-fin_wait_2-fin-">第二次挥手：服务器端收到FIN后，先发送ack=M+1，告诉服务端，你的请求我收到了，但是我还没准备好，请你继续等待我的信息。客户端进入FIN_WAIT_2状态，继续等待服务器端的FIN报文。</h3>
+<h3 id="-fin-n-last_ack-">第三次挥手，服务器端确定数据已发送完成，向客户端发送FIN=N报文。告诉客户端，我的数据发送完成，准备好关闭连接了。服务器端进入LAST_ACK状态。</h3>
+<h3 id="-fin-n-ack-n-1-time_wait-ack-ack-msl-">第四次挥手：客户端收到FIN=N报文后，知道可以关闭连接了，但它不相信网络，怕服务器端不知道服务端要关闭，发送ack=N+1后进入TIME_WAIT状态，如果服务端没有收到ACK则重传。服务器端收到ACK后知道可以断开连接了，客户端等待MSL后没有收到回复证明服务器端正常关闭，客户端也可以关闭连接了，最终完成四次握手。</h3>
+<h2 id="-">同时挥手</h2>
+<h3 id="-">通过序列号与确认应答提高可靠性</h3>
+<p>TCP中，当发送端的数据到达接收主机后，接收端主机会返回一个已收到信息的通知，这个信息叫做确认应答（ACK）。当发送端将数据发出后会等待对端的确认应答，如果有确认应答，说明数据已经成功到达对端。反之，数据丢失可能性很大，也有可能是接收主机无法发送数据确认应答。</p>
+<p>在一定时间没有等待到确认应答，发送端可以认为数据已经丢失，并对数据进行重发处理，因为这个机制，所以即使产生了丢包，仍然可以保证数据可以到达对端实现可靠传输。</p>
+<p>未收到确认应答不代表数据一定丢失，也有可能是数据收到后对方的确认应答回复在中途丢失了，这种情况也会导致发送误以为数据没有达到目的地而重发数据。</p>
+<p>对于目标主机来说反复收到相同数据是不可取的，为了对上层应用提供可靠的传输，目标主机必须放弃重复的数据包，所以我们引入了序列号。</p>
+<h2 id="-">序列号</h2>
+<h4 id="-8-tcp-tcp-">序列号是按照顺序给发送数据的每个字节（8位字节）都标上号码的编号。接收端查询接收数据TCP首部中的序列号和数据长度，将自己下一步应该接收的序列号作为确定应答送回去。通过序列号和确认应答号，TCP能识别是否已经接收数据，又判断是否需要接收，从而实现可靠传输。</h4>
+<h3 id="-">重发超时的确定</h3>
+<h4 id="-">重发超时是指在重发数据之前，等待确认应答到来的那个特定时间间隔。</h4>
+<h4 id="tcp-">TCP要求不管处于何种网络环境都要提供高性能通信，并且无论网络拥堵情况发送何种变化，都必须保证这一特性。它在每次发包时都会计算往返时间及其偏差，这个往返时间和偏差相加，重发超时的时间比这个总和稍大一点。</h4>
+<h4 id="-bsd-unix-windows-0-5s-0-56s-6s-">在BSD的Unix和Windows系统中，超时都以0.5s为单位进行控制，因此重发超时都是0.56s的整数倍，最初的重发超时默认值一般为6s左右。</h4>
+<h4 id="-">数据也不会无限、反复的重发，达到一定重发次数后，如果没有任何的确认应答返回，则会判断网络或者对端主机发生了异常，强制关闭连接，并通知应用程序连接异常强制关闭通信。</h4>
+<h3 id="-">以段位单位发送数据</h3>
+<h4 id="-tcp-mss-ip-">建立TCP连接的同时，确定发送数据包的单位——“最大信息长度（MSS）”。最理想情况，最大信息长度正好是IP中不会被分片处理的最大数据长度。</h4>
+<h4 id="tcp-mss-mss-">TCP在传送大量数据时。以MSS的大小将数据分割传送，进行重发也是以MSS为单位。</h4>
+<h4 id="-mss-tcp-mss-mss-">第三次握手的时候，两端主机之间的MSS由计算得出，两端主机在发出建立连接的要求时，会在TCP首部写入MSS选项，告诉对方自己适应的MSS大小，然后取小值使用。</h4>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

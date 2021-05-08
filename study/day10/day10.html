@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>c++的学习</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="c-">C++的学习</h1>
+<h2 id="-">数据类型</h2>
+<p>C++规定创建一个常量或变量的时候必须指定数据类型，否则无法分配内存。</p>
+<h3 id="-">整型</h3>
+<p>整型变量表示“整数类型”的数据。</p>
+<p>C++中能表示整型的类型的区别在于所占内存空间不同：</p>
+<pre><code>short(短整型)    2字节    (-2^15 ~ 2^15-1)
+int(整型)    4字节    (-2^31 ~ 2^31-1)
+long(长整形)    Windows为4字节，Linux为4字节(32位)，8字节(64位)    (-2^31 ~ 2^31-1)
+long long(长长整形)    8字节    (-2^63 ~ 2^63-1)
+</code></pre><h3 id="sizeof-">sizeof关键字</h3>
+<p>利用sizeof关键字可以统计数据类型所占大小。</p>
+<p>sizeof（数据类型/变量）</p>
+<h3 id="-">实型（浮点型）</h3>
+<p>用于表示小数。</p>
+<p>浮点型变量分为两种：<br>1、单精度浮点型：float。<br>2、双精度浮点型：double。</p>
+<p>区别在于占用空间和表示的有效数字范围不一样。</p>
+<p>float 占用4个字节 表示7位有效数字。<br>double 占用8个字节 表示15~16位有效数字。</p>
+<h3 id="-">字符型</h3>
+<p>字符型变量用于显示单个字符。</p>
+<p>char ch = ‘a’；<br>显示字符型变量用单引号括起来，并不是用双引号。<br>单引号内只能是字符不能是字符串。<br>字符型变量不是把字符本身放进内存存储，而是存储字符对应的ASCII编码到存储单元。</p>
+<h3 id="ascii-">ASCII编码</h3>
+<p>ASCII非打印控制字符：ASCII上的数字0~31分配给了控制字符，用来控制外围设备。</p>
+<p>ASCII打印字符：ASCII上的数字32~126分配给了键盘上的字符。</p>
+<h3 id="-">转义字符</h3>
+<p>用来表示一些不能显示出来的ASCII字符。</p>
+<p>\a    警报    007<br>\b    退格(BS) ，将当前位置移到前一列    008<br>\f    换页(FF)，将当前位置移到下页开头    012<br>\n    换行(LF) ，将当前位置移到下一行开头    010<br>\r    回车(CR) ，将当前位置移到本行开头    013<br>\t    水平制表(HT) （跳到下一个TAB位置）    009<br>\v    垂直制表(VT)    011<br>\    代表一个反斜线字符””    092<br>‘    代表一个单引号（撇号）字符    039<br>“    代表一个双引号字符    034<br>?    代表一个问号    063<br>\0    数字0    000<br>\ddd    8进制转义字符，d范围0~7    3位8进制<br>\xhh    16进制转义字符，h范围09，af，A~F    3位16进制</p>
+<h3 id="-">字符串型</h3>
+<p>用来表示一串字符。</p>
+<p>C风格字符串： char 变量名[] = “字符串值”</p>
+<p>C++风格字符串： string 变量名 = “字符串值”</p>
+<h3 id="bool-">bool布尔类型</h3>
+<p>布尔类型代表真或假的值。</p>
+<p>bool类型只有两个值：true（1）和false（0）.</p>
+<p>bool类型占一个字节大小。</p>
+<h3 id="-">数据的输入</h3>
+<p>用于从键盘获取数据。</p>
+<p>cin &gt;&gt; 变量</p>
+<h3 id="-">运算符</h3>
+<p>用来执行代码的运算</p>
+<p>算术运算符：用来处理四则运算<br>赋值运算符：用来将表达式的值赋给变量<br>比较运算符：用来比较表达式，并返回一个真值或假值。<br>逻辑运算符：根据表达式的值返回真值或假值。</p>
+<h3 id="-">算术运算符</h3>
+<p>用来处理四则运算。</p>
+<pre><code>+    正号    +3    3
+-    负号    -3    -3
++    加    10 + 5    15
+-    减    10 - 5    5
+*    乘    10 * 5    50
+/    除    10 / 5    2
+%    取模(取余)    10 % 3    1
+++    前置递增    a=2; b=++a;    a=3; b=3;
+++    后置递增    a=2; b=a++;    a=3; b=2;
+--    前置递减    a=2; b=--a;    a=1; b=1;
+--    后置递减    a=2; b=a--;    a=1; b=2;
+</code></pre><p><strong>只有整型变量才可以取模运算。</strong><br><strong>前置递增先对变量++再计算表达式，后置递增反之</strong></p>
+<h3 id="-">赋值运算符</h3>
+<p>用于将表达式的值赋给变量。</p>
+<pre><code>=    赋值    a=2; b=3;    a=2; b=3;
++=    加等于    a=0; a+=2;    a=2;
+-=    减等于    a=5; a-=3;    a=2;
+*=    乘等于    a=2; a*=2;    a=4;
+/=    除等于    a=4; a/=2;    a=2;
+%=    模等于    a=3; a%2;    a=1;
+</code></pre><h3 id="-">比较运算符</h3>
+<pre><code>==    相等于    4 == 3    0
+!=    不等于    4 != 3    1
+&lt;    小于    4 &lt; 3    0
+&gt;    大于    4 &gt; 3    1
+&lt;=    小于等于    4 &lt;= 3    0
+&gt;=    大于等于    4 &gt;= 1    1```
+
+### 逻辑运算符 ###
+    ```
+!    非    !a    如果a为假，则!a为真； 如果a为真，则!a为假。
+&amp;&amp;    与    a &amp;&amp; b    如果a和b都为真，则结果为真，否则为假。
+||    或    a || b    如果a和b有一个为真，则结果为真，二者都为假时，结果为假。
+</code></pre><h3 id="-">程序流程结构</h3>
+<p>C/C++支持最基本的三种程序允许结构：<br>顺序结构：程序按顺序进行不发生跳转。<br>选择结构：根据条件是否满足，选择执行相应的功能。<br>循环结构：根据条件是否满足，循环允许某段代码。</p>
+<h3 id="-">选择结构</h3>
+<h4 id="if-">if语句</h4>
+<p>执行满足条件的语句。<br>1、单行if语句：</p>
+<pre><code>if （条件）{
+
+条件满足执行的语句
+
+}
+</code></pre><p><strong>注意：if表达式之后切记不能加分号。</strong></p>
+<p>2、多行格式if语句：</p>
+<pre><code>if （条件）{
+
+条件满足执行语句
+
+}
+
+else{
+
+条件不满足执行语句
+
+}；
+</code></pre><p>3、多条件的if语句：</p>
+<pre><code>if （条件1）{
+
+条件1满足执行语句
+
+}
+
+else if （条件2）{
+
+条件2满足执行的语句
+
+}
+...
+
+else{
+
+都不满足执行的语句
+
+}
+</code></pre><h4 id="-if-">嵌套if语句</h4>
+<p>在if语句种，可以嵌套使用if语句，达到更精准的条件旁段</p>
+<h4 id="-">三目运算符</h4>
+<p>通过三目运算符实现简单的判断</p>
+<p>表达式1 ？ 表达式2 ：表达式3</p>
+<p>如果表达式1的值为真，执行表达式2并放回表达式2的结果。<br>如果表达式1的值为假，执行表达式3并返回表达式3的结果。</p>
+<p><strong>和if语句相比，三目运算符短小整洁，但使用嵌套的话结构会不清晰。</strong></p>
+<h4 id="switch-">switch语句</h4>
+<p>执行多条件分支语句。</p>
+<pre><code>switch （表达式）{
+
+case 结果1：执行语句；break；
+
+case 结果2：执行语句；break；
+
+...    
+
+default：执行语句；break；
+
+}
+</code></pre><p><strong>switch语句的表达式类型只能是整型或者字符型。</strong><br><strong>case里如果没有break，程序会一直向下执行。</strong></p>
+<p><strong>与if语句相比，多条件判断时，switch结构清晰，执行效率高，但不可以判断区间。</strong></p>
+<h3 id="-">循环结构</h3>
+<h4 id="while-">while循环语句</h4>
+<p>满足循环条件，执行循环语句。</p>
+<p>while（循环条件）{循环语句}</p>
+<p>只要循环条件为真就执行循环语句。</p>
+<p><strong>执行循环语句的时候，程序必须提供跳出循环的出口，防止出现死循环。</strong></p>
+<h4 id="do-while">do···while</h4>
+<p>满足循环条件，执行循环语句。</p>
+<p>do{ 循环语句 }<br>while{循环条件}；</p>
+<p><strong>与while的区别在于，do···while先执行一次循环语句再判断循环条件。</strong></p>
+<h4 id="for-">for循环语句</h4>
+<p>满足循环条件，执行循环语句。</p>
+<pre><code>for（起始表达式；条件表达式；末尾循环体）{
+
+循环语句；
+
+}
+</code></pre><p>起始表达式先执行一次，然后判断条件表达式若为真执行循环语句，然后执行末尾循环体，然后再判断条件表达式，如真执行循环语句…，若假退出循环。</p>
+<p><strong>注意：for循环的表达式要用分号分隔。</strong></p>
+<h4 id="-">嵌套循环</h4>
+<p>在循环体中再嵌套一层循环。</p>
+<h3 id="-">跳转语句</h3>
+<h4 id="break-">break语句</h4>
+<p>用于跳出“选择结构”或“循环结构”。</p>
+<p>break使用时机：</p>
+<p>1、出现switch条件语句中，终止case并跳出switch。</p>
+<p>2、循环语句中，跳出当前循环语句。</p>
+<p>3、嵌套循环中，跳出最近的内层循环语句。</p>
+<h4 id="continue-">continue语句</h4>
+<p>在“循环语句”中，跳过本次循环未执行完的语句，继续执行下次循环。</p>
+<p><strong>continue语句没有使整个循环终止，而break会跳出循环。</strong></p>
+<h4 id="goto-">goto语句</h4>
+<p>goto可以无条件跳转语句。</p>
+<p>goto 标记；</p>
+<p>如果标记的名称存在，执行到goto语句的时候，会跳转到标记名称的位置。</p>
+<h3 id="-">数组</h3>
+<p>数组指的是一个集合，里面存放了相同类型的数据元素。</p>
+<p>特点1：数组内每个数据元素都是相同的数据类型。</p>
+<p>特点2：数组是由连续的内存位置组成的。</p>
+<h4 id="-">一维数组</h4>
+<p>1、数据类型 数组名[ 数组长度 ]；</p>
+<p>2、数据类型 数组名[ 数组长度 ] = { 值1， 值2 …}；</p>
+<p>3、数组类型 数组名[  ] = { 值1， 值2 …}；</p>
+<p><strong>总结1：数组名的命名规范和变量名规范一样，不能和变量重名。</strong></p>
+<p><strong>总结2：数组中下标以开始索引。</strong></p>
+<h4 id="-">一维数组的数组名</h4>
+<p>作用：<br>1、统计整个数组在内存的长度。<br>2、获取数组在内存的首地址。</p>
+<p><strong>数组名是常量不能赋值。</strong></p>
+<p><strong>直接打印数组名，可以查看数组所占内存首地址。</strong></p>
+<p><strong>对数组名进行sizeof，可以获取整个数组所占内存空间大小</strong></p>
+<h4 id="-">冒泡排序</h4>
+<p>最常用的排序算法，对数组内元素进行排序。</p>
+<p>1、比较相邻元素，如果第一个比第二个大则交换他们两个。</p>
+<p>2、对每一对相邻数组执行这个操作，执行完成后找到第一个最大值。</p>
+<p>3、重复以上步骤，每次比较次数-1，直到不需要比较。</p>
+<p><strong> 将一个数组进行升序排序的实例。 </strong></p>
+<pre><code>int main（）{
+
+    int num[x]={a，b，...，f}；
+
+    for （int i=0；i &lt; x -1 ；i++）//这一步是第一个循环语句他先定义了一个数，对数组进行x-1次排序。
+    {
+            for （int j = 0；j&lt;9-1-i；j++）//每次排序要排序的数字个数。
+            {
+                    if （num[x]&gt;num[x+1]）
+                    {
+                        int temp=num[x]；
+                        num[x]=num[x+1]；
+                        num[x+1]=temp；
+                     }
+            }
+    }//如果数列前面的大于数列后面的，将其交换。
+</code></pre><h3 id="-">二维数组</h3>
+<p>二维数组的定义方法：</p>
+<p>1、数据类型 数组名[ 行数 ][ 列数 ]；</p>
+<p>2、数据类型 数组名[ 行数 ][ 列数 ]={ {数据1，数据2}，{数据3，数据4}}；</p>
+<p>3、数据类型 数组名[ 行数 ][ 列数 ]={ 数据1，数据2，数据3，数据4 }；</p>
+<p>4、数据类型 数组名[  ][ 列数 ] ={<br>数据1，数据2，数据3，数据4}；</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+using namespace std;
+int main()
+{int num[3][3]={
+    {1,2,3},
+    {4,5,6},
+    {7,8,9}
+};    //    定义一个二维数值，数组有三行三列，用逗号将每行数组分隔开。
+cout&lt;&lt; *num[0][0]&lt;&lt;endl;//输出第1行第一列的数组内容，如果不加*，输出的是数组的地址。
+}
+</code></pre><p><strong>定义二维数组时，如果初始化了数据，可以省略行数。</strong></p>
+<h4 id="-">二维数组数组名</h4>
+<p>1、查看二维数组所占内存空间。</p>
+<p>2、获取二维数组首地址。</p>
+<p><strong>二维数组组名就是这个数组的首地址。</strong></p>
+<h3 id="-">函数</h3>
+<p>将一段经常使用的代码封装起来，减少重复代码。</p>
+<h4 id="-">函数定义</h4>
+<p>1、返回值类型</p>
+<p>2、函数名</p>
+<p>3、参数表列</p>
+<p>4、函数体语句</p>
+<p>5、return表达式</p>
+<pre><code>返回值类型 函数名 （参数列表）
+{
+
+        函数体语句
+
+        return 表达式
+
+}
+</code></pre><p>返回值类型：一个函数可以返回一个值。</p>
+<p>函数名：给函数定义一个名字，最好这个名字可以让别人识别作用。</p>
+<p>参数列表：使用函数时传入的数据。</p>
+<p>函数体语句：{}内的内容，函数内要执行的语句。</p>
+<p>return表达式：和返回值挂钩，函数执行完成后，返回对应的数据。</p>
+<h4 id="-">函数调用</h4>
+<p>使用已定义的函数实现功能。</p>
+<p>函数名（参数）</p>
+<p><strong>函数定义的小括号内为形参，函数调用时传入的参数为实参。</strong></p>
+<h3 id="-">值传递</h3>
+<p>值传递：函数调用时实参将数值传入给形参。</p>
+<p>值传递时，形参修饰不了实参。</p>
+<h4 id="-">函数常见样式</h4>
+<p>1、无参无返</p>
+<p>2、有参无返</p>
+<p>3、无参有返</p>
+<p>4、有参有返</p>
+<h4 id="-">函数的声明</h4>
+<p>告诉编译器函数名称以及如何调用函数，函数实际主体可以单独定义。</p>
+<p><strong>函数可以声明多次。但只能有一个定义。</strong></p>
+<h4 id="-">函数的分文件编写</h4>
+<p>函数分文件编写可以让代码结构更加清晰。</p>
+<p>函数分文件编写的四个步骤：</p>
+<p>1、创建后缀名为.h的头文件。</p>
+<p>2、创建后缀名为.cpp的源文件。</p>
+<p>3、头文件写函数的声明。</p>
+<p>4、源文件写函数定义。</p>
+<h3 id="-">指针</h3>
+<p>作用：可以通过指针间接访问内存。</p>
+<p>内存编号是从0开始记录的，一般用十六进制数字表示。</p>
+<p>可以利用指针变量保存地址。</p>
+<h4 id="-">指针变量的定义和使用</h4>
+<p>指针变量定义：<br>数据类型 * 变量名；</p>
+<p>指针变量和普通变量的区别：</p>
+<p>普通变量存放数据，指针变量存放地址。</p>
+<p>指针变量可以通过“*”操作符操作指针变量指向内存空间，这个过程叫解引用。</p>
+<p><strong>可以通过&amp;符号获取变量地址。</strong></p>
+<p><strong>利用指针可以记录地址。</strong></p>
+<p><strong>对指针变量解应用，可以操作指针指向的内存。</strong></p>
+<h4 id="-">指针所占内存空间</h4>
+<p>所有指针类型在32位操作系统是4个字节。<br>所有指针类型在64位操作系统是8个字节。</p>
+<h3 id="-">空指针和野指针</h3>
+<h4 id="-">空指针</h4>
+<p>空指针：指针变量指向内存中编号位为0的空间。</p>
+<p>用法：初始化指针变量。</p>
+<p>注意：空指针指向的地址是不可以访问的。</p>
+<h4 id="-">野指针</h4>
+<p><strong>空指针和野指针是我们申请的空间，因此不要访问。</strong></p>
+<h3 id="const-">const修饰指针</h3>
+<p>const修饰指针有三种情况：</p>
+<p>1、const修饰指针 —— 常量指针。<br>2、const修饰常量 —— 指针常量。<br>3、const修饰指针又修饰常量。</p>
+<p><strong> const跟着的是指针的话是常量指针，是常量的话就是执政常量。 </strong></p>
+<h3 id="-">指针和数组</h3>
+<p>利用指针访问数组中的元素。</p>
+<h3 id="-">指针和函数</h3>
+<p>利用指针作函数参数，可以修改实参的值。</p>
+<p><strong>不想修改实参就用值传递，如果想修改实参就用地址传递。</strong></p>
+<h3 id="-">指针、数组、函数</h3>
+<p><strong>当数组名传入函数当参数时，数组名退化为指向首元素的指针。</strong></p>
+<h3 id="-">结构体</h3>
+<h4 id="-">结构体概念</h4>
+<p>结构体属于用户<strong>自定义的数据类型</strong>，允许用户存储不同的数据类型。</p>
+<h4 id="-">结构体的定义和使用</h4>
+<pre><code>struct 结构体名 {结构体成员列表}
+
+struct students
+{    
+    string name；
+    int age；
+    int score；
+}；
+
+
+int mian（）{
+
+        struct students stu1；
+
+        stu1.name = “张三”；
+        stu1.age = 18；
+        stu.score = 100；
+
+        cout &lt;&lt;“名字：”&lt;&lt; stu1.name &lt;&lt;“年龄：”&lt;&lt; stu1.age &lt;&lt; “分数” &lt;&lt; stu1.score &lt;&lt;endl;
+
+        return 0；
+    }
+</code></pre><p><strong>定义结构体的关键字是struct。</strong><br><strong>创建结构体变量时，关键字struct可以省略。</strong><br><strong>结构体变量利用操作符”.”访问成员。</strong></p>
+<h3 id="-">结构体数组</h3>
+<p>将自定义结构体放入数组以方便维护。</p>
+<pre><code>struct 结构体名 数组名[元素个数] = {
+    {}，
+    {}
+    {}
+    }
+</code></pre><h3 id="-">结构体指针</h3>
+<p>利用指针访问结构体中的成员。</p>
+<p>利用操作符-&gt;可以通过结构体指针访问结构体属性。</p>
+<p><strong>结构体指针可以通过-&gt;操作符访问结构体中的成员。</strong></p>
+<h3 id="-">结构体嵌套结构体</h3>
+<p>结构体中的成员是另一个结构体。</p>
+<h3 id="-">结构体做函数参数</h3>
+<p>将结构体作为参数向函数中传递。</p>
+<p>传递方式：</p>
+<p>值传递、地址传递。</p>
+<p><strong>如果不想修改主函数的数据就用值传递，反之使用地址传递。</strong></p>
+<h3 id="-const-">结构体中const的使用场景</h3>
+<p>用const防止误操作。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

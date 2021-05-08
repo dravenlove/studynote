@@ -1,0 +1,9 @@
+1、登录ros官网，根据自己的的ubuntu版本下载安装ros。
+2、并根据官网指示配置环境。
+3、创建ROS工作空间
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/
+$ catkin_make
+4、保证工作区被安装脚本正确覆盖，需确定ROS_PACKAGE_PATH环境变量包含你当前的工作空间目录：
+$ echo $ROS_PACKAGE_PATH
+/home/<username>/catkin_ws/src:/opt/ros/<distro>/share
