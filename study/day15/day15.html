@@ -275,7 +275,36 @@ pre[data-line] .line-highlight[data-end]:after {
 10.&#x51FA;&#x73B0;ssl&#x62A5;&#x9519;&#x7684;&#x65F6;&#x5019;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;:<br>
 <code>git config http.sslVerify &quot;false&quot;</code><br>
 11.&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x7BA1;&#x7406;&#x5904;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x5E93;&#x3002;<br>
-12.&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x3002;</p>
+12.&#x66F4;&#x65B0;&#x5B8C;&#x4EE3;&#x7801;&#x540E;&#x8981;&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5730;&#x65B9;&#x4FDD;&#x5B58;&#x66F4;&#x6539;&#x9700;&#x8981;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;,&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x7ED9;&#x5B58;&#x50A8;&#x5E93;&#x4E5F;&#x5373;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x5939;&#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x7533;&#x8BF7;.<br>
+13.&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x540E;&#x9700;&#x8981;&#x628A;&#x4EE3;&#x7801;&#x540C;&#x6B65;&#x5230;github&#x624D;&#x662F;&#x6B63;&#x786E;&#x4E0A;&#x4F20;&#x5230;github,&#x8FD9;&#x4E00;&#x6B65;&#x624D;&#x662F;&#x628A;&#x672C;&#x5730;&#x5E93;&#x4EE3;&#x7801;&#x4E0A;&#x4F20;&#x5230;github.</p>
+<h2 class="mume-header" id="github%E7%9A%84%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0%E5%88%B0%E6%88%91%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8">github&#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#x5230;&#x6211;&#x7684;&#x670D;&#x52A1;&#x5668;</h2>
+
+<p>1.&#x5B89;&#x88C5;git&#x4F9D;&#x8D56;,&#x5229;&#x7528;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;:<br>
+<code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel</code><br>
+2.&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x5B89;&#x88C5;git.<br>
+3.&#x5B89;&#x88C5;git&#x5B8C;&#x6210;&#x540E;&#x7528;&#x4EE3;&#x7801;<code>git --version</code>&#x9A8C;&#x8BC1;&#x5B89;&#x88C5;&#x662F;&#x5426;&#x6210;&#x529F;.<br>
+4.&#x7ED9;git&#x521B;&#x5EFA;&#x4E13;&#x95E8;&#x7684;&#x7528;&#x6237;&#x7EC4;&#x548C;&#x7528;&#x6237;.<br>
+5.&#x521B;&#x5EFA;&#x7528;&#x6237;&#x7EC4;&#x547D;&#x4EE4;<code>groupadd groupname</code>groupname&#x4E3A;&#x7528;&#x6237;&#x7EC4;&#x540D;&#x5B57;.<br>
+6.&#x7ED9;&#x7528;&#x6237;&#x7EC4;&#x521B;&#x5EFA;&#x5B50;&#x7528;&#x6237;<code>adduser username -g groupname</code>groupname&#x4E3A;&#x8981;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x7EC4;&#x7684;&#x540D;&#x5B57;,username&#x4E3A;&#x5B50;&#x7528;&#x6237;&#x540D;&#x5B57;.<br>
+7.&#x7ED9;git&#x7528;&#x6237;&#x6DFB;&#x52A0;&#x5BC6;&#x7801;&#x5229;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;<code>passwd username</code>.<br>
+8.&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x521B;&#x5EFA;GIT&#x4ED3;&#x5E93;.&#x5148;cd&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x7136;&#x540E;&#x8F93;&#x5165;&#x547D;&#x4EE4;<code>chown &#x7528;&#x6237;&#x7EC4;:&#x7528;&#x6237;&#x540D; &#x76EE;&#x5F55;</code>&#x6765;&#x628A;&#x8BE5;&#x76EE;&#x5F55;&#x6240;&#x5C5E;&#x7528;&#x6237;&#x6539;&#x6210;&#x6307;&#x5B9A;&#x7528;&#x6237;.<br>
+9.git init&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x5373;&#x53EF;.<br>
+10.&#x5728;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x76EE;&#x5F55;&#x8F93;&#x5165;<code>git remote add &#x540D;&#x5B57; &#x8FDE;&#x63A5;&#x5730;&#x5740;</code>&#x5730;&#x5740;&#x4E3A;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x597D;&#x590D;&#x5236;&#x7684;&#x90A3;&#x4E00;&#x4E2A;,&#x540D;&#x5B57;&#x4E3A;&#x63A8;&#x9001;&#x7684;&#x65F6;&#x5019;&#x7684;&#x540D;&#x5B57;.<br>
+11.&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>git remote -v</code>&#x5FEB;&#x901F;&#x6DFB;&#x52A0;&#x63A8;&#x9001;&#x514B;&#x9686;&#x914D;&#x7F6E;.<br>
+12.&#x4E0B;&#x62C9;&#x4ED3;&#x5E93;&#x547D;&#x4EE4;<code>git pull &#x4ED3;&#x5E93;&#x5730;&#x5740; &#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x540D;:&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;</code>.&#x4E0B;&#x62C9;&#x662F;&#x5C06;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x67D0;&#x4E2A;&#x5206;&#x652F;&#x7684;&#x66F4;&#x65B0;&#x548C;&#x672C;&#x5730;&#x6307;&#x5B9A;&#x5206;&#x652F;&#x5408;&#x5E76;&#x8D77;&#x6765;.<br>
+13.&#x6587;&#x4EF6;&#x514B;&#x9686;<code>git clone &#x4ED3;&#x5E93;&#x5730;&#x5740;</code>&#x514B;&#x9686;&#x662F;&#x6574;&#x4E2A;&#x4ED3;&#x5E93;&#x514B;&#x9686;&#x4E0B;&#x6765;.<br>
+14.<code>git branch [&#x65B0;&#x5206;&#x652F;]</code>&#x62A5;&#x9519;&#x4E14;<code>git branch -a</code>&#x65E0;&#x5206;&#x652F;&#x663E;&#x793A;&#x7684;&#x539F;&#x56E0;&#x662F;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;master&#x7684;&#x63D0;&#x4EA4;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5148;&#x8FDB;&#x884C;&#x4E00;&#x6B21;commit&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x624D;&#x80FD;&#x5EFA;&#x7ACB;master,&#x6240;&#x4EE5;&#x65B0;&#x5EFA;&#x4ED3;&#x5E93;&#x5B8C;&#x6210;&#x540E;&#x5148;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7528;<code>git add .</code>&#x5B58;&#x653E;&#x5230;&#x6682;&#x5B58;&#x533A;,&#x7528;<code>git status</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;,&#x6700;&#x540E;&#x7528;<code>git commit</code>&#x63D0;&#x4EA4;&#x6682;&#x5B58;&#x533A;&#x5230;&#x4ED3;&#x5E93;.&#x8FD0;&#x884C;10&#x548C;11.<br>
+15.<code>git fetch &quot;&#x5730;&#x5740;&#x6216;&#x94FE;&#x63A5;&#x522B;&#x540D;&quot;</code>&#x547D;&#x4EE4;&#x4ECE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x83B7;&#x53D6;&#x65B0;&#x5206;&#x652F;&#x548C;&#x6570;&#x636E;.<br>
+16.<code>git merge &quot;&#x5730;&#x5740;&#x6216;&#x94FE;&#x63A5;&#x540D;/&#x5206;&#x652F;&#x540D;&quot;</code>&#x5408;&#x5E76;&#x670D;&#x52A1;&#x5668;&#x66F4;&#x65B0;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;.<br>
+17.<code>git branch &quot;&#x5206;&#x652F;&#x540D;&quot;</code>&#x4E3A;&#x521B;&#x5EFA;&#x5206;&#x652F;&#x547D;&#x4EE4;.<code>git checkout &quot;&#x5206;&#x652F;&#x540D;&quot;</code>&#x4E3A;&#x5207;&#x6362;&#x5206;&#x652F;&#x547D;&#x4EE4;.</p>
+<h1 class="mume-header" id="%E5%90%8C%E6%AD%A5%E8%84%9A%E6%9C%AC">&#x540C;&#x6B65;&#x811A;&#x672C;#</h1>
+
+<p>1.&#x521B;&#x5EFA;&#x811A;&#x672C;&#x6587;&#x4EF6;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)
+cd &quot;&#x9700;&#x8981;&#x540C;&#x6B65;&#x7684;&#x5206;&#x652F;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;.&quot;
+git fetch &quot;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;&quot;
+git merge &quot;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;/&#x5206;&#x652F;&#x540D;&quot;
+</code></pre><p>2.&#x7528;&#x547D;&#x4EE4;<code>chmod 777 &quot;&#x6587;&#x4EF6;&#x540D;&quot;</code>&#x6DFB;&#x52A0;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;.</p>
 
       </div>
       
