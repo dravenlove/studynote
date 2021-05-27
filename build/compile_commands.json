@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/draven/Desktop/work/SSH/desktop/html/build",
+  "command": "C:\\environment\\mingw64\\bin\\x86_64-w64-mingw32-gcc.exe    -ansi -pedantic -Wall -O3 -DNDEBUG -o CMakeFiles\\leptjson.dir\\leptjson.c.obj -c C:\\Users\\draven\\Desktop\\work\\SSH\\desktop\\html\\interesting\\day1\\tutorial01\\leptjson.c",
+  "file": "C:/Users/draven/Desktop/work/SSH/desktop/html/interesting/day1/tutorial01/leptjson.c"
+},
+{
+  "directory": "C:/Users/draven/Desktop/work/SSH/desktop/html/build",
+  "command": "C:\\environment\\mingw64\\bin\\x86_64-w64-mingw32-gcc.exe    -ansi -pedantic -Wall -O3 -DNDEBUG -o CMakeFiles\\leptjson_test.dir\\test.c.obj -c C:\\Users\\draven\\Desktop\\work\\SSH\\desktop\\html\\interesting\\day1\\tutorial01\\test.c",
+  "file": "C:/Users/draven/Desktop/work/SSH/desktop/html/interesting/day1/tutorial01/test.c"
+}
+]
