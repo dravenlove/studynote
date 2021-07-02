@@ -8,16 +8,16 @@
 	<div class="table">   <!-- 定义文档的某个区域部分 -->
 	
 		<!--  table标签定义表格-->
-		<table border="2px" style="border-collapse:collapse; text-align:center; margin:auto; margin-top:50px; height:842px;font-size:.9em;">
+		<table border="2px" style="border-collapse:collapse; text-align:center; margin:auto; margin-top:50px; height:820px;font-size:.9em;">
 		<!-- border定义表格边框的宽度,px代表像素的意思,text-align文本对齐方式,margin为外边距属性,auto为自动设置浏览器边距,依赖浏览器来定,height为表格高度,margin-top为距离特面最上边的的距离,em为相对长度单位,如果没经过设置为浏览器默认字体尺寸1em=16px. -->
 			<colgroup>
 			<!-- 对表格中的列进行组合 -->
-			<col style="width:90px;">
+			<col style="width:110px;">
+			<col style="width:100px;">
+			<col style="width:80px;">
+			<col style="width:80px;">
 			<col style="width:70px;">
-			<col style="width:70px;">
-			<col style="width:70px;">
-			<col style="width:72px;">
-			<col style="width:67px;">
+			<col style="width:110px;">
 			<col style="width:129.5px;">
 			<!-- 表格中的列宽定义width -->
 		</colgroup>
@@ -27,14 +27,14 @@
 		<!-- 用于组合HTML表格的主体内容 -->
 			<tr>
 			<!-- 用以表示html的行 -->
-				<td>姓名</td>
-				<td>区嘉亮</td>
+				<td style="height:47.125px;">姓名</td>
+				<td  style="height:47.125px;">区嘉亮</td>
 				<td>性别</td>
 				<td>男</td>
 				<td>出生年月</td>
 				<td>1999/02/19</td>
-				<td rowspan="4" style="height:188.5px;">&nbsp;</td>
-			<!-- td标签用来定义HTML的标准格,td rowspan=""里面的数字为横跨的行数,&nbsp为空格,这里的height为宽度 -->
+				<td rowspan="4">&nbsp;</td>
+			<!-- td标签用来定义HTML的标准格,td rowspan=""里面的数字为横跨的行数,&nbsp为空格 -->
 			</tr>
 			<tr>
 				<td>民族</td>
@@ -54,10 +54,9 @@
 			</tr>
 			<tr>
 				<td>专业</td>
-				<td colspan="2">机械工程</td>
-				<td>毕业学校</td>
+				<td>机械工程</td>
+				<td colspan="2">毕业学校</td>
 				<td colspan="2">华南理工大学广州学院</td>
-				<!-- colspan为横跨的列数 -->
 			</tr>
 			<tr>
 				<th colspan="7" style="border-width:2px;">技能、特长或爱好</th>
@@ -77,19 +76,9 @@
 				<td colspan="4">经历</td>
 			</tr>
 			<tr>
-				<td>2020年12月<br>
-				~2021年5月</td>
+				<td>2020年12月</td>
 				<td colspan="2">广州蓝海机器人系统有限公司</td>
-				<td colspan="4";text-align:left;>
-				<div style="text-align: left">
-					1、负责培训新人调试 agv 小车。<br>
-					2、负责调试测试 agv 小车硬件，利用硬件知识包括串口、网口，tcp/upd。<br>
-					3、qt 软件的应用。<br>
-					4、ros 在小车的应用。
-				</div>
-					<!-- div标签用于定义某个区域的 -->
-				</td>
-					<!-- br标签的作用是换行-->
+				<td colspan="4">实习，负责QT软件编程、熟悉硬件知识串口、网口，调试AGV小车</td>
 			</tr>
 			<tr>
 				<th colspan="7" style="border-width:2px;">联系方式</th>
@@ -107,29 +96,10 @@
 				<td colspan="2">510800</td>
 			</tr>
 			<tr>
-				<th colspan="7" style=border-width:2px;">项目经历</th>
-			</tr>
-			<td>时间</td>
-			<td colspan="2">单位</td>
-			<td colspan="2">经历</td>
-			<td colspan="2">项目业绩</td>
+				<th colspan="7" style="height:70px; border-width:2px;">项目经历</th>
 			</tr>
 			<tr>
-			<td>2019年1月~
-			<br>2019年12月
-			<td colspan="2">华南理工大学广州学院机器人队</td>
-			<td colspan="2">
-				1、项目的目的是让机器马和机器车以尽量快的速度跑到终点。
-				<br>2、我在项目担任的工作是为机器的机械结构做出适当调整以满足电控调试机器。
-			</td>
-			<td colspan="2">作为主力成员荣获全国二等奖</td>
-			</tr>
-			<tr>
-				<td>2020年12月
-				<br>~2021年2月
-				<td colspan="2">广州蓝海机器人系统有限公司</td>
-				<td colspan="2">根据厂区的实际场地，利用测量技术、cad软件和测绘能力绘制场地的大小，计算场地的面积，以及计算出铺设场地钢板的最优解。</td>
-				<td colspan="2">为公司在这个项目上节省大量成本,并推进项目的进程</td>
+				<th colspan="7" style="height:150px;">&nbsp;全国大学生机器人大赛</th>
 			</tr>
 		</tbody>
 	</table>

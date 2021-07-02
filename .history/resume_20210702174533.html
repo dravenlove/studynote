@@ -12,13 +12,13 @@
 		<!-- border定义表格边框的宽度,px代表像素的意思,text-align文本对齐方式,margin为外边距属性,auto为自动设置浏览器边距,依赖浏览器来定,height为表格高度,margin-top为距离特面最上边的的距离,em为相对长度单位,如果没经过设置为浏览器默认字体尺寸1em=16px. -->
 			<colgroup>
 			<!-- 对表格中的列进行组合 -->
-			<col style="width:90px;">
-			<col style="width:70px;">
-			<col style="width:70px;">
-			<col style="width:70px;">
-			<col style="width:72px;">
+			<col style="width:50px;">
+			<col style="width:200px;">
+			<col style="width:100px;">
+			<col style="width:50px;">
+			<col style="width:50px;">
 			<col style="width:67px;">
-			<col style="width:129.5px;">
+			<col style="width:195px;">
 			<!-- 表格中的列宽定义width -->
 		</colgroup>
 		<caption style="font-weight:bold;margin-bottom:20px; font-size:3em; letter-spacing:.5em;">个人简历</caption>
@@ -33,8 +33,8 @@
 				<td>男</td>
 				<td>出生年月</td>
 				<td>1999/02/19</td>
-				<td rowspan="4" style="height:188.5px;">&nbsp;</td>
-			<!-- td标签用来定义HTML的标准格,td rowspan=""里面的数字为横跨的行数,&nbsp为空格,这里的height为宽度 -->
+				<td rowspan="4" style="height:70.875px;">&nbsp;</td>
+			<!-- td标签用来定义HTML的标准格,td rowspan=""里面的数字为横跨的行数,&nbsp为空格,这里的height为每一行的宽度,这里横跨4行要乘以4 -->
 			</tr>
 			<tr>
 				<td>民族</td>
@@ -80,16 +80,11 @@
 				<td>2020年12月<br>
 				~2021年5月</td>
 				<td colspan="2">广州蓝海机器人系统有限公司</td>
-				<td colspan="4";text-align:left;>
-				<div style="text-align: left">
-					1、负责培训新人调试 agv 小车。<br>
+				<td colspan="4">1、负责培训新人调试 agv 小车。<br>
 					2、负责调试测试 agv 小车硬件，利用硬件知识包括串口、网口，tcp/upd。<br>
 					3、qt 软件的应用。<br>
-					4、ros 在小车的应用。
-				</div>
-					<!-- div标签用于定义某个区域的 -->
-				</td>
-					<!-- br标签的作用是换行-->
+					4、ros 在小车的应用。</td>
+			<!-- br标签的作用是换行-->
 			</tr>
 			<tr>
 				<th colspan="7" style="border-width:2px;">联系方式</th>
@@ -115,8 +110,8 @@
 			<td colspan="2">项目业绩</td>
 			</tr>
 			<tr>
-			<td>2019年1月~
-			<br>2019年12月
+			<td>2019年1月
+			<br>~2019年12月
 			<td colspan="2">华南理工大学广州学院机器人队</td>
 			<td colspan="2">
 				1、项目的目的是让机器马和机器车以尽量快的速度跑到终点。
