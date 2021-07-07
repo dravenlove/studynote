@@ -14,7 +14,6 @@ int main(int argc,char* argv[])
 
     char Input='\0';
 
-    std::cin>>Input;
     if(Input='Y')
     {std::cout<<Num1*Num2;
     }

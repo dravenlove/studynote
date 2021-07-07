@@ -1,26 +1,24 @@
 #include<iostream>
-
+#include<string>
+#include<bitset>
 
 
 int main(int argc,char* argv[])
 {
     
-    std::cout<<"输入两个整数:"<<std::endl;
-    int Num1=0,Num2=0;
-    std::cin>>Num1;
-    std::cin>>Num2;
+    bool A=1,B=1;
 
-    std::cout<<"输入一个字母,输入Y把你上面输入的两个数字相乘,其余相加."<<std::endl;
+    std::cout<<"输入两个布尔值:";
 
-    char Input='\0';
+    std::cin>>A;
+    std::cin>>B;
 
-    std::cin>>Input;
-    if(Input='Y')
-    {std::cout<<Num1*Num2;
-    }
-    else
-    {std::cout<<Num1+Num2;
-    }
+    std::cout<<"与"<<A&B<<std::endl;
+    std::cout<<"或"<<A|B<<std::endl;
+    std::cout<<"非"<<~A<<" "<<~B<<std::endl;
+    std::cout<<"异或"<<A^B<<std::endl;
+
+
     return 0;
 }
 

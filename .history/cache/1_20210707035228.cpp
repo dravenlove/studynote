@@ -1,26 +1,20 @@
 #include<iostream>
-
+#include<string>
+#include<bitset>
 
 
 int main(int argc,char* argv[])
 {
     
-    std::cout<<"输入两个整数:"<<std::endl;
-    int Num1=0,Num2=0;
-    std::cin>>Num1;
-    std::cin>>Num2;
+    std::cout<<"输入一个0~255的数值";
 
-    std::cout<<"输入一个字母,输入Y把你上面输入的两个数字相乘,其余相加."<<std::endl;
+    unsigned short InputNum=0;
+    std::cin>>InputNum;
 
-    char Input='\0';
+    std::bitset<8> InputBits(InputNum);
+    std::cout<<"将输入数组转为二进制:"<<InputBits<<std::endl;
 
-    std::cin>>Input;
-    if(Input='Y')
-    {std::cout<<Num1*Num2;
-    }
-    else
-    {std::cout<<Num1+Num2;
-    }
+
     return 0;
 }
 

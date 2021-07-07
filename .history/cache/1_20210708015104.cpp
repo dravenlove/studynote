@@ -5,7 +5,7 @@
 int main(int argc,char* argv[])
 {
     
-    std::cout<<"输入两个整数:"<<std::endl;
+    std::cout<<"输入两个整数:"std::endl;
     int Num1=0,Num2=0;
     std::cin>>Num1;
     std::cin>>Num2;
@@ -14,7 +14,6 @@ int main(int argc,char* argv[])
 
     char Input='\0';
 
-    std::cin>>Input;
     if(Input='Y')
     {std::cout<<Num1*Num2;
     }

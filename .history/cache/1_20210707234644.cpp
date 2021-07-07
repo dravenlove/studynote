@@ -5,22 +5,23 @@
 int main(int argc,char* argv[])
 {
     
-    std::cout<<"输入两个整数:"<<std::endl;
-    int Num1=0,Num2=0;
-    std::cin>>Num1;
-    std::cin>>Num2;
+    bool A=1,B=1,C=0,D=0;
 
-    std::cout<<"输入一个字母,输入Y把你上面输入的两个数字相乘,其余相加."<<std::endl;
+    std::cout<<"输入两个布尔值:";
 
-    char Input='\0';
+    std::cin>>A;
+    std::cin>>B;
+    C=A&B;
+    std::cout<<"与"<<C<<std::endl;
+    C=A|B;
+    std::cout<<"或"<<C<<std::endl;
+    C=~A;
+    D=~B;
+    std::cout<<"非"<<C<<" "<<D<<std::endl;
+    C=A^B;
+    std::cout<<"异或"<<C<<std::endl;
 
-    std::cin>>Input;
-    if(Input='Y')
-    {std::cout<<Num1*Num2;
-    }
-    else
-    {std::cout<<Num1+Num2;
-    }
+
     return 0;
 }
 
