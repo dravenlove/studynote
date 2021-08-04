@@ -1,0 +1,11 @@
+# ninja log v5
+1	172	0	CMakeFiles/test1_autogen	9c15f37d0d482d2a
+1	172	0	test1_autogen/mocs_compilation.cpp	9c15f37d0d482d2a
+176	925	6486737357480928	CMakeFiles/test1.dir/mywidget.cpp.obj	9189cd545a36127e
+172	929	6486737357510840	CMakeFiles/test1.dir/test1_autogen/mocs_compilation.cpp.obj	22ac4bebba3384cd
+178	1007	6486737358298741	CMakeFiles/test1.dir/main.cpp.obj	8aa55c50370c7d4
+1007	1257	6486737360722252	test1.exe	210e1d1d2c5896ed
+2	32	0	CMakeFiles/test1_autogen	9c15f37d0d482d2a
+2	32	0	test1_autogen/mocs_compilation.cpp	9c15f37d0d482d2a
+32	1043	6486751774807719	CMakeFiles/test1.dir/main.cpp.obj	8aa55c50370c7d4
+1044	1231	6486751776465291	test1.exe	210e1d1d2c5896ed

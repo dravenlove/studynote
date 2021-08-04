@@ -1,30 +1,13 @@
 #include<iostream>
+#include<string>
 
 
-
-int main(int argc,char* argv[])
 {
-    
-    std::cout<<"输入两个整数:"<<std::endl;
-    int Num1=0,Num2=0;
-    std::cin>>Num1;
-    std::cin>>Num2;
 
-    std::cout<<"输入一个字母,输入Y把你上面输入的两个数字相乘,其余相加."<<std::endl;
-
-    char Input='\0';
-
-    std::cin>>Input;
-    if(Input='Y')
-    {std::cout<<Num1*Num2;
-    }
-    else
-    {std::cout<<Num1+Num2;
-    }
     return 0;
-}
+        }
 
-
+    
 
 
 

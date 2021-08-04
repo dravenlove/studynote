@@ -41,7 +41,13 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "mutex": "cpp",
+        "condition_variable": "cpp",
+        "chrono": "cpp",
+        "cstring": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/interesting/day1/tutorial01"
 }

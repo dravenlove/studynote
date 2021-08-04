@@ -1,0 +1,4 @@
+C:/Users/draven/Desktop/work/SSH/desktop/html/cache/qt/build-test1-Desktop_Qt_5_9_9_MSVC2015_32bit-Debug/CMakeFiles/test1.dir
+C:/Users/draven/Desktop/work/SSH/desktop/html/cache/qt/build-test1-Desktop_Qt_5_9_9_MSVC2015_32bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/draven/Desktop/work/SSH/desktop/html/cache/qt/build-test1-Desktop_Qt_5_9_9_MSVC2015_32bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/draven/Desktop/work/SSH/desktop/html/cache/qt/build-test1-Desktop_Qt_5_9_9_MSVC2015_32bit-Debug/CMakeFiles/test1_autogen.dir
