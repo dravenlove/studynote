@@ -47,7 +47,8 @@
         "chrono": "cpp",
         "cstring": "cpp",
         "ratio": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "stdio.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/interesting/day1/tutorial01"
 }
